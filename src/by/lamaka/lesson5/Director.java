@@ -12,8 +12,9 @@ public class Director extends Employee {
     public Director() {
     }
 
-    public Director(String name, String surname, POSTS post, double workExperience) {
-        super(name, surname, post, workExperience);
+    public Director(String name, String surname,  double workExperience) {
+        super(name, surname, workExperience);
+        this.setPost(this.getPost());
     }
 
     public boolean addWorker(Employee employee) {

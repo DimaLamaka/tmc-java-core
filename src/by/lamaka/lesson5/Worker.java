@@ -4,8 +4,9 @@ public class Worker extends Employee {
     public Worker() {
     }
 
-    public Worker(String name, String surname, POSTS post, double workExperience) {
-        super(name, surname, post, workExperience);
+    public Worker(String name, String surname, double workExperience) {
+        super(name, surname, workExperience);
+        this.setPost(this.getPost());
     }
 
     public POSTS getPost() {

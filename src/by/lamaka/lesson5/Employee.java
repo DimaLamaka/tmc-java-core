@@ -8,9 +8,8 @@ public abstract class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String name, String surname, POSTS post, double workExperience) {
+    public Employee(String name, String surname, double workExperience) {
         super(name, surname);
-        this.post = post;
         this.workExperience = workExperience;
     }
 
@@ -19,6 +18,10 @@ public abstract class Employee extends Person {
     }
 
     public abstract POSTS getPost();
+
+    public void setPost(POSTS post) {
+        this.post = post;
+    }
 
     public double getWorkExperience() {
         return workExperience;

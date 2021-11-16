@@ -2,10 +2,10 @@ package by.lamaka.lesson5;
 
 public class Main {
     public static void main(String[] args) {
-        Employee worker = new Worker("Ivan", "Ivanov", POSTS.WORKER, 2);
-        Employee worker1 = new Worker("Egor", "Egorov", POSTS.WORKER, 1);
-        Employee worker2 = new Worker("Petya", "Petrov", POSTS.WORKER, 2.5);
-        Employee director = new Director("Ira", "Sidorova", POSTS.DIRECTOR, 4);
+        Employee worker = new Worker("Ivan", "Ivanov",  2);
+        Employee worker1 = new Worker("Egor", "Egorov", 1);
+        Employee worker2 = new Worker("Petya", "Petrov",  2.5);
+        Employee director = new Director("Ira", "Sidorova", 4);
 
         System.out.println(worker.toString());
         System.out.println(worker1.toString());
@@ -18,7 +18,7 @@ public class Main {
         }
         System.out.println(director.toString());
 
-        Employee director1 = new Director("Jenya", "Mir", POSTS.DIRECTOR, 5.5);
+        Employee director1 = new Director("Jenya", "Mir", 5.5);
         if (director1 instanceof Director) {
             ((Director) director1).addWorker(worker2);
         }
