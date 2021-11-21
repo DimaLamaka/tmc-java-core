@@ -24,14 +24,11 @@ public class EmployeeLogicImpl implements EmployeeLogic {
         }
         for (Employee emp : director.getEmployees()) {
             if (emp.getName().equals(name) && emp.getSurname().equals(surname)) {
+                System.out.println("Found!!! His director: " + director.getName()+" " + director.getSurname());
                 return emp;
             }
             if (emp instanceof Director) {
-                for (Employee empDir : ((Director) emp).getEmployees()) {
-                    if (empDir.getName().equals(name) && empDir.getSurname().equals(surname)) {
-                        return empDir;
-                    }
-                }
+                return searchEmployeeImprove((Director) emp, name, surname);
             }
         }
         return null;

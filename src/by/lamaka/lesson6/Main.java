@@ -52,6 +52,29 @@ public class Main {
         System.out.println("find by improved search: Petya Petrov");
         Optional<Employee> emp = Optional.ofNullable(employeeLogic.searchEmployeeImprove((Director) director, "Petya", "Petrov"));
         emp.ifPresent(employee -> System.out.println(getInfo.getInfoEmp(employee)));
+        Employee director2 = new Director("Inna", "Mihalova", 8);
+        Employee director3 = new Director("Evgeniy", "Fedorov", 8);
+        Employee worker3 = new Worker("Ivan", "Mironov", 3);
+        Employee worker4 = new Worker("Fedya", "Maslov", 8);
+        Employee worker5 = new Worker("Petr", "Yan", 6);
+
+        if (director2 instanceof Director) {
+            employeeLogic.addEmployee((Director) director2, worker3);
+            employeeLogic.addEmployee((Director) director2, director1);
+        }
+
+        if (director3 instanceof Director) {
+            employeeLogic.addEmployee((Director) director3, worker4);
+            employeeLogic.addEmployee((Director) director3, worker5);
+        }
+        if (director1 instanceof Director) {
+            employeeLogic.addEmployee((Director) director1, worker4);
+            employeeLogic.addEmployee((Director) director1, director3);
+        }
+        System.out.println("find by improved search: Petya Petrov");
+        Optional<Employee> emp2 = Optional.ofNullable(employeeLogic.searchEmployeeImprove((Director) director1, "Petr", "Yan"));
+        emp2.ifPresent(employee -> System.out.println(getInfo.getInfoEmp(employee)));
+
 
     }
 }
