@@ -1,5 +1,7 @@
 package by.lamaka.lesson11;
 
+import java.util.Random;
+
 public class Producer extends Thread {
     private Store store;
 
@@ -10,10 +12,9 @@ public class Producer extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 20; i++) {
+        while (store.isOpen()) {
             try {
-                store.put(new Item("item" + i));
-                Thread.sleep(200);
+                store.put(new Item("item" + new Random().nextInt(50)));
             } catch (InterruptedException e) {
                 System.err.println(e);
             }

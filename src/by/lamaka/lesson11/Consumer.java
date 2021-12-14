@@ -10,10 +10,9 @@ public class Consumer extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 20; i++) {
+        while (store.isOpen()) {
             try {
                 store.get();
-                Thread.sleep(800);
             } catch (InterruptedException e) {
                 System.err.println(e);
             }
